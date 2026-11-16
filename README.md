@@ -14,6 +14,12 @@
   <img alt="Tests: 32 passing" src="https://img.shields.io/badge/tests-32%20passing-3fcf8e">
 </p>
 
+<p align="center">
+  <a href="https://jmmt18.github.io/Aurora-Health-Monitor/"><b>▶ Try the live demo</b></a> &nbsp;·&nbsp;
+  <a href="demo/video/aurora-demo.mp4"><b>Watch the video</b></a> &nbsp;·&nbsp;
+  <a href="demo"><b>Screenshots</b></a>
+</p>
+
 ![Aurora web app](demo/screenshots/01_dashboard.jpg)
 
 ## Contents
@@ -42,7 +48,8 @@ On a long mission there is no doctor on board, and a message to Earth can take m
 
 ## Demo
 
-**[▶ Watch the demo video](demo/video/aurora-demo.mp4)**
+- **[▶ Live demo](https://jmmt18.github.io/Aurora-Health-Monitor/)**: runs in the browser with simulated data, nothing to install. In Chrome or Edge it can also connect to the ESP32 over USB.
+- **[▶ Demo video](demo/video/aurora-demo.mp4)**
 
 | Prototype | Cardiac analysis | Fall detected |
 |---|---|---|
@@ -120,7 +127,7 @@ npm test         # 32 checks of the HRV / QTc / EDR / sEMG formulas
 ```
 
 - **With the ESP32:** open the app in **Chrome or Edge** (Web Serial), close any other serial monitor, and click **Connect ESP32 (USB)**.
-- **Without hardware:** the app runs on simulated data. Pick a situation in the **Simulated data · scenario** menu.
+- **Without hardware:** the app runs on simulated data (also online at the [live demo](https://jmmt18.github.io/Aurora-Health-Monitor/)). Pick a situation in the **Simulated data · scenario** menu.
 
 ## Build and flash the firmware
 

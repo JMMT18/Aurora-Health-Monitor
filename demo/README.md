@@ -12,7 +12,7 @@ Photos and screenshots of Aurora running. All the screenshots below use the simu
 
 ## Demo video
 
-**[▶ Watch the demo video](video/aurora-demo.mp4)** (34 MB, plays on GitHub).
+**[▶ Watch the demo video](video/aurora-demo.mp4)** (34 MB, plays on GitHub). To try the app yourself, open the **[live demo](https://jmmt18.github.io/Aurora-Health-Monitor/)**.
 
 ## The prototype
 
@@ -40,7 +40,7 @@ Each zone lists what is measured there, with the sensor, a trend line and a plai
 
 ## Body zones, 3D
 
-The same zones on the BodyParts3D anatomical model (CC BY 4.0). These six were captured on an earlier build whose interface was still in Spanish; the 3D view is the same.
+The same zones on the BodyParts3D anatomical model (CC BY 4.0). The numbered markers show where each reading is taken.
 
 | Head | Chest | Hand and wrist |
 |---|---|---|
