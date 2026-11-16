@@ -1,4 +1,4 @@
-# Links usados: fuentes de datos (lista final)
+# Links usados: datos, modelos, métodos y herramientas
 
 Actualizado el 2026-11-15. Todos los links se comprobaron. Las listas de archivos de OSDR se consultaron en su API (`https://osdr.nasa.gov/osdr/data/osd/files/<número>`).
 Al lado de cada fuente dice dónde quedó en `DATASET_MIO` y en Drive (Hackatones › NASA Space Apps › 26 › Datasets).
@@ -83,3 +83,33 @@ Al lado de cada fuente dice dónde quedó en `DATASET_MIO` y en Drive (Hackatone
 
 ## Otros datos que ya están en DATASET_MIO pero no en la lista final
 - **OSD-573 (microbiología de la cápsula Inspiration4):** https://osdr.nasa.gov/bio/repo/data/studies/OSD-573. Son 2 CSV convertidos de TSV (`Metaphlan-taxonomy` y `Pathway-abundances-cpm`), en `Cabin Environment/Microbiome (OSD-573)/` en DATASET_MIO y en Drive.
+- **API de archivos de OSDR** (para listar lo que tiene cada estudio): `https://osdr.nasa.gov/osdr/data/osd/files/<número>`, por ejemplo https://osdr.nasa.gov/osdr/data/osd/files/575
+
+## 6. Modelo anatómico 3D y figura 2D
+
+- **BodyParts3D (DBCLS):** https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html
+- **Licencia:** CC BY 4.0, https://creativecommons.org/licenses/by/4.0/ (atribución en `webapp/public/ATTRIBUTION.md`)
+- **Artículo:** Mitsuhashi N. et al. (2009), *BodyParts3D: 3D structure database for anatomical concepts*, Nucleic Acids Research. https://doi.org/10.1093/nar/gkn613
+- **Referencias visuales consultadas:** https://github.com/ashemag/human-atlas y https://anatomy.app/3d-anatomy-overview
+
+## 7. Métodos y fórmulas (`webapp/src/lib/hrv.js`)
+
+- **HRV (dominio del tiempo y la frecuencia, LF/HF):** Task Force of the ESC and NASPE (1996), *Heart rate variability: standards of measurement*. https://doi.org/10.1161/01.CIR.93.5.1043
+- **Detección de latidos (QRS):** Pan J., Tompkins W. (1985), *A real-time QRS detection algorithm*. https://doi.org/10.1109/TBME.1985.325532
+- **Sensor GSR (conversión a conductancia):** https://wiki.seeedstudio.com/Grove-GSR_Sensor/
+
+## 8. Hardware y software
+
+- **AD8232 (ECG):** https://www.analog.com/en/products/ad8232.html
+- **ESP-IDF (firmware ESP32):** https://docs.espressif.com/projects/esp-idf/
+- **Web Serial API:** https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API
+- **React:** https://react.dev · **Vite:** https://vite.dev · **Three.js:** https://threejs.org
+- **Fuentes tipográficas:** https://fonts.google.com
+- **Repositorio del proyecto:** https://github.com/JMMT18/Aurora-Health-Monitor
+
+## 9. Revisados pero no usados en la app
+
+- **NASA DONKI** (sección 5): solo JSON y sin eventos en el periodo; la radiación no se mide con nuestros sensores.
+- **EchoNet-Dynamic** (sección 1): requiere registro y son pacientes en la Tierra.
+- **ODIR-5K** (fondo de ojo): https://www.kaggle.com/datasets/andrewmvd/ocular-disease-recognition-odir5k. Descartado: no tenemos cámara de fondo de ojo.
+- **OSD-201:** https://osdr.nasa.gov/bio/repo/data/studies/OSD-201. Descartado: es un estudio de vacunas en ratones.
