@@ -12,7 +12,7 @@ Photos and screenshots of Aurora running. All the screenshots below use the simu
 
 ## Demo video
 
-**[▶ Watch the demo video](video/aurora-demo.mp4)** (34 MB, plays on GitHub). To try the app yourself, open the **[live demo](https://jmmt18.github.io/Aurora-Health-Monitor/)**.
+**[▶ Watch the demo video](https://jmmt18.github.io/Aurora-Health-Monitor/video.html)** (plays in the browser; the file is also in [`video/`](video)). To try the app yourself, open the **[live demo](https://jmmt18.github.io/Aurora-Health-Monitor/)**.
 
 ## The prototype
 

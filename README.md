@@ -16,7 +16,7 @@
 
 <p align="center">
   <a href="https://jmmt18.github.io/Aurora-Health-Monitor/"><b>▶ Try the live demo</b></a> &nbsp;·&nbsp;
-  <a href="demo/video/aurora-demo.mp4"><b>Watch the video</b></a> &nbsp;·&nbsp;
+  <a href="https://jmmt18.github.io/Aurora-Health-Monitor/video.html"><b>Watch the video</b></a> &nbsp;·&nbsp;
   <a href="demo"><b>Screenshots</b></a>
 </p>
 
@@ -49,7 +49,7 @@ On a long mission there is no doctor on board, and a message to Earth can take m
 ## Demo
 
 - **[▶ Live demo](https://jmmt18.github.io/Aurora-Health-Monitor/)**: runs in the browser with simulated data, nothing to install. In Chrome or Edge it can also connect to the ESP32 over USB.
-- **[▶ Demo video](demo/video/aurora-demo.mp4)**
+- **[▶ Demo video](https://jmmt18.github.io/Aurora-Health-Monitor/video.html)**
 
 | Prototype | Cardiac analysis | Fall detected |
 |---|---|---|
