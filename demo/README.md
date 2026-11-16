@@ -12,7 +12,7 @@ Photos and screenshots of Aurora running. All the screenshots below use the simu
 
 ## Demo video
 
-See the [`video/`](video) folder.
+**[▶ Watch the demo video](video/aurora-demo.mp4)** (34 MB, plays on GitHub).
 
 ## The prototype
 

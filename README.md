@@ -42,11 +42,13 @@ On a long mission there is no doctor on board, and a message to Earth can take m
 
 ## Demo
 
+**[▶ Watch the demo video](demo/video/aurora-demo.mp4)**
+
 | Prototype | Cardiac analysis | Fall detected |
 |---|---|---|
 | <img src="demo/prototype.jpg" alt="Physical prototype"> | <img src="demo/screenshots/08_cardiac_analysis.jpg" alt="Cardiac analysis panel"> | <img src="demo/screenshots/12_scenario_fall.jpg" alt="Fall scenario with 15 s countdown"> |
 
-Full gallery (every body zone in 2D and 3D, reaction test, scenarios) and the demo video: **[`demo/`](demo)**.
+Full gallery (every body zone in 2D and 3D, reaction test, scenarios): **[`demo/`](demo)**.
 
 ## How it works
 
