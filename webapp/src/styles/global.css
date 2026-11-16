@@ -1,0 +1,21 @@
+@import "./tokens.css";
+
+*, *::before, *::after { box-sizing: border-box; }
+html { color-scheme: dark; }
+body {
+  margin: 0;
+  background: var(--bg-base);
+  background-image:
+    radial-gradient(ellipse 900px 520px at 8% -10%, rgba(109, 79, 240, .16), transparent 70%),
+    radial-gradient(ellipse 800px 600px at 105% 10%, rgba(94, 230, 255, .08), transparent 70%);
+  background-attachment: fixed;
+  color: var(--text-1);
+  font: 15px/1.45 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+#root { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 12px 24px; }
+h1, h2, h3 { font-family: var(--font-display); margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+p { margin: 0; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; border-radius: 6px; }
+::selection { background: var(--violet-600); color: #fff; }

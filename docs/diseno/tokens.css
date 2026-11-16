@@ -1,0 +1,56 @@
+/* Aurora · Sistema visual v2 ("Aurora holográfica")
+   Paso 2 del rediseño (skill ui-design-system). Contrastes verificados con WCAG AA.
+   Regla: verde / ámbar / rojo SOLO significan estado de salud. La marca es violeta → cian. */
+:root {
+  /* superficies: espacio profundo con tinte violeta */
+  --bg-void: #05060d;
+  --bg-base: #0a0c18;
+  --surface-1: #11142a;
+  --surface-2: #171b36;
+  --surface-3: #1f2445;
+  --line: #2a3060;
+  --line-soft: #1b2042;
+
+  /* texto (contraste sobre surface-2: 15.3 / 8.0 / 4.9) */
+  --text-1: #f1f3ff;
+  --text-2: #aab1d8;
+  --text-3: #7f88b5;
+
+  /* marca "aurora": violeta estructural + cian holográfico */
+  --aurora-violet: #9d85ff;      /* acentos, foco, selección (5.8:1) */
+  --aurora-violet-600: #6d4ff0;  /* botón primario, texto blanco 5.2:1 */
+  --aurora-violet-900: #241a5c;
+  --holo-cyan: #5ee6ff;          /* figura humana, líneas guía, onda ECG */
+  --holo-cyan-dim: #2a7f99;
+  --holo-glow: 0 0 12px rgba(94, 230, 255, 0.45);
+  --aurora-gradient: linear-gradient(120deg, #9d85ff 0%, #5ee6ff 100%);
+
+  /* estados (reservados) */
+  --ok: #4ade80;   --ok-tint: #0e2a1c;
+  --warn: #fbbf24; --warn-tint: #33260a;
+  --crit: #ff6b6b; --crit-tint: #3a1219;
+
+  /* tipografía */
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --fs-xs: 0.75rem;  --fs-sm: 0.875rem; --fs-md: 1rem;
+  --fs-lg: 1.25rem;  --fs-xl: 1.5rem;   --fs-2xl: 2rem; --fs-3xl: 2.75rem;
+
+  /* espaciado 4/8 */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px;
+
+  /* forma: paneles con esquina cortada estilo HUD + radios suaves */
+  --r-sm: 8px; --r-md: 14px; --r-lg: 20px; --r-full: 999px;
+  --cut: 14px;
+
+  /* profundidad */
+  --shadow-panel: 0 0 0 1px var(--line-soft), 0 20px 40px -24px rgba(0, 0, 0, 0.8);
+  --shadow-focus: 0 0 0 2px var(--bg-base), 0 0 0 4px var(--aurora-violet);
+
+  /* movimiento */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 150ms; --dur: 280ms; --dur-slow: 600ms;
+
+  --tap-min: 44px;
+}

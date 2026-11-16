@@ -1,0 +1,942 @@
+.hbv-root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 680px;
+  background-color: #2b2b2e;
+  color: #f3f4f6;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.hbv-root *,
+.hbv-root *::before,
+.hbv-root *::after {
+  box-sizing: border-box;
+}
+
+/* Toolbar */
+.hbv-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px;
+  background: #222225;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 10;
+}
+
+.hbv-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hbv-brand-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #7c4dff, #56a8dc);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.hbv-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #f9fafb;
+}
+
+.hbv-subtitle {
+  margin: 0;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.hbv-toolbar-groups {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.hbv-segmented {
+  display: inline-flex;
+  background: #323236;
+  padding: 3px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.hbv-seg-btn {
+  border: none;
+  background: transparent;
+  color: #cbd5e1;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.16s, color 0.16s;
+}
+
+.hbv-seg-btn:hover {
+  color: #ffffff;
+}
+
+.hbv-seg-btn.is-active {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.hbv-pill-btn {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #323236;
+  color: #d1d5db;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hbv-pill-btn.is-active {
+  border-color: rgba(86, 168, 220, 0.6);
+  color: #e0f2fe;
+  background: rgba(86, 168, 220, 0.16);
+}
+
+.hbv-export-group {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.hbv-export-btn {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: #3b3b40;
+  color: #f9fafb;
+  padding: 6px 10px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.hbv-export-btn:hover {
+  background: #52525b;
+}
+
+/* Main Workspace */
+.hbv-workspace {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.hbv-sidebar {
+  width: 315px;
+  flex-shrink: 0;
+  background: #27272a;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hbv-panel {
+  background: #323236;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.hbv-panel h2 {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #d1d5db;
+}
+
+.hbv-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.hbv-panel-header h2 {
+  margin: 0;
+}
+
+.hbv-quick-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.hbv-quick-actions button {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #e5e7eb;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hbv-quick-actions button:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.hbv-system-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hbv-system-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #29292d;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 3px 6px 3px 4px;
+  transition: border-color 0.15s, opacity 0.15s;
+}
+
+.hbv-system-item.is-selected {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: #38383e;
+}
+
+.hbv-system-item.is-off {
+  opacity: 0.55;
+}
+
+.hbv-system-toggle {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: #f3f4f6;
+  padding: 6px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.hbv-color-swatch {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 2px solid;
+  flex-shrink: 0;
+}
+
+.hbv-system-name {
+  flex: 1;
+}
+
+.hbv-state-tag {
+  font-size: 10px;
+  font-weight: 700;
+  color: #9ca3af;
+}
+
+.hbv-isolate-btn {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: #cbd5e1;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 4px 7px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hbv-isolate-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.hbv-slider-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.hbv-slider-field:last-child {
+  margin-bottom: 0;
+}
+
+.hbv-slider-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #e5e7eb;
+}
+
+.hbv-slider-field input[type='range'] {
+  width: 100%;
+  accent-color: #56a8dc;
+  cursor: pointer;
+}
+
+/* Inspector */
+.hbv-inspector-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.hbv-inspector-head h3 {
+  margin: 0;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.hbv-en-name {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.hbv-organ-highlight {
+  margin: 8px 0;
+  padding: 7px 10px;
+  border-radius: 7px;
+  background: rgba(86, 168, 220, 0.18);
+  border: 1px solid rgba(86, 168, 220, 0.4);
+  font-size: 12px;
+  color: #e0f2fe;
+}
+
+.hbv-summary {
+  margin: 0 0 10px;
+  font-size: 12px;
+  line-height: 1.48;
+  color: #d1d5db;
+}
+
+.hbv-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.hbv-metric-box {
+  background: #27272a;
+  border-radius: 7px;
+  padding: 7px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: center;
+}
+
+.hbv-metric-val {
+  font-size: 11px;
+  font-weight: 700;
+  color: #f9fafb;
+}
+
+.hbv-metric-lbl {
+  font-size: 9px;
+  color: #9ca3af;
+}
+
+.hbv-organs-list h4 {
+  margin: 0 0 6px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #9ca3af;
+}
+
+.hbv-organs-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hbv-organs-list li {
+  background: #27272a;
+  border-radius: 7px;
+  padding: 7px 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border: 1px solid transparent;
+}
+
+.hbv-organs-list li.is-active {
+  border-color: #56a8dc;
+  background: rgba(86, 168, 220, 0.14);
+}
+
+.hbv-organs-list li strong {
+  font-size: 11.5px;
+  color: #f3f4f6;
+}
+
+.hbv-organs-list li span {
+  font-size: 11px;
+  color: #9ca3af;
+  line-height: 1.35;
+}
+
+/* Viewport Stage */
+.hbv-stage {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  gap: 2px;
+  background: #222225;
+}
+
+.hbv-stage.hbv-dim-2d,
+.hbv-stage.hbv-dim-3d {
+  grid-template-columns: 1fr;
+}
+
+.hbv-stage.hbv-dim-split {
+  grid-template-columns: 1fr 1fr;
+}
+
+.hbv-viewport-pane {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 460px;
+  background: #3a3a3c;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.hbv-pane-badge {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  right: 12px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.hbv-pane-badge > span:first-child {
+  background: rgba(24, 24, 27, 0.72);
+  backdrop-filter: blur(6px);
+  padding: 5px 10px;
+  border-radius: 7px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #f9fafb;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hbv-pane-hint {
+  background: rgba(24, 24, 27, 0.65);
+  padding: 4px 9px;
+  border-radius: 6px;
+  font-size: 10.5px;
+  color: #d1d5db;
+}
+
+/* 2D Component Styles */
+.anatomy-2d-grid-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 44px 18px 18px;
+  overflow-y: auto;
+  background: #3a3a3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.anatomy-2d-grid {
+  width: 100%;
+  max-width: 780px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.anatomy-2d-card {
+  position: relative;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 8px 6px 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.16s, border-color 0.16s, background-color 0.16s;
+}
+
+.anatomy-2d-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-2px);
+}
+
+.anatomy-2d-card.is-selected {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.anatomy-2d-card.is-dimmed {
+  opacity: 0.35;
+}
+
+.anatomy-2d-card-figure {
+  width: 100%;
+  max-width: 155px;
+  aspect-ratio: 240 / 500;
+}
+
+.human-body-2d-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.anatomy-2d-card-label {
+  margin-top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.anatomy-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.anatomy-2d-layered {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #3a3a3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 44px 16px 36px;
+}
+
+.anatomy-2d-stage {
+  height: 100%;
+  max-height: 100%;
+  aspect-ratio: 240 / 500;
+  transition: transform 0.15s ease-out;
+}
+
+.anatomy-2d-zoom-controls {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(24, 24, 27, 0.8);
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.anatomy-2d-zoom-controls button {
+  background: #3f3f46;
+  border: none;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.anatomy-2d-zoom-controls span {
+  font-size: 11px;
+  min-width: 36px;
+  text-align: center;
+}
+
+.anatomy-2d-footer-caption {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(24, 24, 27, 0.72);
+  padding: 5px 10px;
+  border-radius: 7px;
+  font-size: 11px;
+  color: #d1d5db;
+}
+
+/* 2D Physiological Animations */
+@keyframes anatomyHeartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.075); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.045); }
+  65% { transform: scale(1); }
+}
+
+@keyframes anatomyBreathe {
+  0%, 100% { transform: scale(1, 1); }
+  50% { transform: scale(1.032, 1.022); }
+}
+
+@keyframes anatomyNeuralPulse {
+  0%, 100% { opacity: 0.94; }
+  50% { opacity: 1; filter: drop-shadow(0 0 2px rgba(179, 136, 255, 0.65)); }
+}
+
+.anatomy-heartbeat {
+  animation: anatomyHeartbeat 0.95s ease-in-out infinite;
+}
+
+.anatomy-breathe {
+  animation: anatomyBreathe 4s ease-in-out infinite;
+}
+
+.anatomy-pulse-nervous {
+  animation: anatomyNeuralPulse 2.4s ease-in-out infinite;
+}
+
+/* 3D Component Styles */
+.anatomy-3d-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #3a3a3c;
+}
+
+.anatomy-3d-canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
+.anatomy-3d-camera-bar {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  background: rgba(24, 24, 27, 0.78);
+  backdrop-filter: blur(6px);
+  padding: 5px 8px;
+  border-radius: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.anatomy-cam-btn {
+  background: transparent;
+  border: none;
+  color: #e5e7eb;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.anatomy-cam-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+.anatomy-3d-grid-legend {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(24, 24, 27, 0.78);
+  backdrop-filter: blur(6px);
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.anatomy-legend-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.06);
+  color: #e5e7eb;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.anatomy-legend-chip.is-selected {
+  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.anatomy-hover-pill {
+  position: absolute;
+  top: 46px;
+  left: 14px;
+  z-index: 7;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(17, 24, 39, 0.88);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 6px 11px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+/* Search & Dissection Controls */
+.hbv-search-box {
+  display: flex;
+  align-items: center;
+  background: #27272a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+.hbv-search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #f9fafb;
+  font-size: 12px;
+  outline: none;
+}
+
+.hbv-search-box button {
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.hbv-search-results {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  max-height: 185px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hbv-search-results li button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  text-align: left;
+  background: #27272a;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #e5e7eb;
+  padding: 5px 8px;
+  font-size: 11.5px;
+  cursor: pointer;
+}
+
+.hbv-search-results li button:hover {
+  border-color: rgba(86, 168, 220, 0.6);
+  background: #38383e;
+}
+
+.hbv-search-tag {
+  font-size: 9.5px;
+  text-transform: uppercase;
+  color: #93c5fd;
+  background: rgba(59, 130, 246, 0.15);
+  padding: 2px 5px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.hbv-part-hint {
+  display: block;
+  font-size: 10px;
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.hbv-organ-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: #f0f9ff;
+}
+
+.hbv-organ-meta {
+  font-size: 10.5px;
+  color: #bae6fd;
+  margin-top: 2px;
+}
+
+.hbv-organ-desc {
+  margin: 6px 0 0;
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: #e0f2fe;
+}
+
+.hbv-organ-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.hbv-organ-actions button {
+  flex: 1;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(125, 211, 252, 0.4);
+  color: #f0f9ff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hbv-organ-actions button:hover {
+  background: rgba(56, 189, 248, 0.25);
+}
+
+.hbv-restore-btn {
+  width: 100%;
+  margin-top: 6px;
+  padding: 7px 10px;
+  border-radius: 7px;
+  background: rgba(245, 158, 11, 0.18);
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: #fde68a;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 3D Loading Overlay */
+.anatomy-3d-loading {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  background: rgba(34, 34, 37, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.anatomy-loading-card {
+  width: 100%;
+  max-width: 340px;
+  background: #27272a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 18px 20px;
+  text-align: center;
+}
+
+.anatomy-loading-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #f9fafb;
+}
+
+.anatomy-loading-sub {
+  margin-top: 4px;
+  font-size: 11.5px;
+  color: #9ca3af;
+}
+
+.anatomy-loading-bar {
+  margin-top: 14px;
+  height: 7px;
+  border-radius: 999px;
+  background: #3f3f46;
+  overflow: hidden;
+}
+
+.anatomy-loading-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #56a8dc, #7c4dff);
+  transition: width 0.2s ease-out;
+}
+
+.anatomy-loading-pct {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+@media (max-width: 1080px) {
+  .hbv-workspace {
+    flex-direction: column-reverse;
+    overflow-y: auto;
+  }
+  .hbv-sidebar {
+    width: 100%;
+    border-right: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    overflow-y: visible;
+  }
+  .hbv-stage.hbv-dim-split {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}

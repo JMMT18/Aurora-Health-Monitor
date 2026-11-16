@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Monitor ECG — verificación de sensor</title>
+<style>
+  body {
+    margin: 0;
+    background: #0a0e1a;
+    color: #eef2fb;
+    font-family: system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    gap: 16px;
+  }
+  h1 { font-size: 1.1rem; margin: 0; }
+  .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: center; }
+  input {
+    background: #151d35;
+    border: 1px solid #263252;
+    color: #eef2fb;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: monospace;
+  }
+  button {
+    background: #0b3d91;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  button:hover { background: #3867c7; }
+  #status { font-size: 0.85rem; color: #9fadcf; }
+  #status.error { color: #ff6267; }
+  #status.leadsoff { color: #f2b134; }
+  #status.ok { color: #3fb66f; }
+  canvas {
+    background: #10172b;
+    border: 1px solid #263252;
+    border-radius: 12px;
+  }
+</style>
+</head>
+<body>
+  <h1>Monitor ECG — solo para verificar el sensor AD8232</h1>
+  <div class="row">
+    <label for="host">IP del ESP32:</label>
+    <input id="host" type="text" placeholder="192.168.1.50" />
+    <button id="start">Conectar</button>
+  </div>
+  <div id="status">Sin conectar</div>
+  <canvas id="plot" width="900" height="300"></canvas>
+
+  <script>
+    const hostInput = document.getElementById("host");
+    const statusEl = document.getElementById("status");
+    const canvas = document.getElementById("plot");
+    const ctx = canvas.getContext("2d");
+
+    hostInput.value = localStorage.getItem("ecg-host") || "";
+
+    let display = new Array(canvas.width).fill(2048);
+    let timer = null;
+
+    function draw(leadsOff) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.strokeStyle = leadsOff ? "#f2b134" : "#3fb66f";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      for (let i = 0; i < display.length; i++) {
+        const v = display[i];
+        const y = canvas.height - (v / 4095) * canvas.height;
+        if (i === 0) ctx.moveTo(i, y);
+        else ctx.lineTo(i, y);
+      }
+      ctx.stroke();
+    }
+
+    async function poll(host) {
+      try {
+        const res = await fetch(`http://${host}/ecg`);
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const data = await res.json();
+
+        if (data.leadsOff) {
+          statusEl.textContent = "Electrodo desconectado";
+          statusEl.className = "leadsoff";
+        } else {
+          statusEl.textContent = `Conectado — ${data.samples.length} muestras`;
+          statusEl.className = "ok";
+        }
+
+        if (data.samples && data.samples.length) {
+          display = display.slice(data.samples.length).concat(data.samples);
+          if (display.length > canvas.width) {
+            display = display.slice(display.length - canvas.width);
+          }
+        }
+        draw(data.leadsOff);
+      } catch (err) {
+        statusEl.textContent = "Sin conexión: " + err.message;
+        statusEl.className = "error";
+      }
+    }
+
+    document.getElementById("start").addEventListener("click", () => {
+      const host = hostInput.value.trim();
+      if (!host) return;
+      localStorage.setItem("ecg-host", host);
+      if (timer) clearInterval(timer);
+      poll(host);
+      timer = setInterval(() => poll(host), 150);
+    });
+  </script>
+</body>
+</html>

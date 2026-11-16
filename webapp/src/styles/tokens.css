@@ -1,0 +1,30 @@
+/* Aurora v2 · «Aurora holográfica» (ver Mockups/02_sistema_visual.md).
+   Verde / ámbar / rojo SOLO significan estado de salud. Contrastes verificados AA. */
+:root {
+  --bg-base: #0a0c18;
+  --surface-1: #11142a;
+  --surface-2: #171b36;
+  --surface-3: #1f2445;
+  --line: #2a3060;
+  --line-soft: #1b2042;
+
+  --text-1: #f1f3ff;
+  --text-2: #aab1d8;
+  --text-3: #8a93bf;
+
+  --violet: #9d85ff;
+  --violet-600: #6d4ff0;
+  --violet-900: #241a5c;
+  --cyan: #5ee6ff;
+
+  --ok: #4ade80;   --ok-tint: #0e2a1c;
+  --warn: #fbbf24; --warn-tint: #33260a;
+  --crit: #ff6b6b; --crit-tint: #3a1219;
+
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --r-sm: 8px; --r-md: 14px; --cut: 14px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}

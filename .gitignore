@@ -1,0 +1,35 @@
+# ---------- secretos ----------
+main/wifi_credentials.h
+
+# ---------- ESP-IDF ----------
+build/
+idf6/build/
+managed_components/
+dependencies.lock
+sdkconfig.old
+*.bin
+*.elf
+*.map
+# (sdkconfig e idf6/sdkconfig SI se suben: tienen FREERTOS_HZ=1000, necesario para el ECG a 200 Hz)
+
+# ---------- webapp ----------
+node_modules/
+webapp/dist/
+# los modelos 3D se suben solo comprimidos (.bin.gz); los .bin crudos se ignoran arriba
+
+# ---------- respaldos y herramientas locales ----------
+_respaldo*/
+webapp/_respaldo*/
+.claude/
+.impeccable/
+.vscode/
+.devcontainer/
+
+# ---------- sistema / editores ----------
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+__pycache__/
+*.pyc
