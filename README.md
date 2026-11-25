@@ -33,6 +33,7 @@
 - [Run the web app](#run-the-web-app)
 - [Build and flash the firmware](#build-and-flash-the-firmware)
 - [Data sources](#data-sources)
+- [Team](#team)
 - [Credits and license](#credits-and-license)
 
 ## The problem
@@ -159,6 +160,19 @@ Thresholds and recommendations are grounded in clinical ranges and in open datas
 | **Fitbit** (Zenodo 53894) | Daily steps, active and sedentary minutes |
 
 Detailed ranges per parameter: [`docs/INVENTARIO_PARAMETROS.md`](docs/INVENTARIO_PARAMETROS.md) and [`docs/RECOMENDACIONES_PARAMETROS.md`](docs/RECOMENDACIONES_PARAMETROS.md).
+
+## Team
+
+**Los Chachos** · Universidad Militar Nueva Granada (UMNG), Colombia 🇨🇴
+
+| Member | Role |
+|---|---|
+| **Juan Moreno** · team leader | Sensor characterization, firmware optimization, interface–hardware communication, web app logic |
+| **Santiago Cabezas** | Circuit design, sensor characterization, firmware |
+| **Juan Velandia** | Web interface, firmware |
+| **Samuel Rubio** | Web interface |
+| **Jose Gomez** | Hardware: sensor characterization and testing |
+| **Camilo Castro** | Circuit design, sensor testing |
 
 ## Credits and license
 
